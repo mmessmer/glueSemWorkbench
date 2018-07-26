@@ -16,9 +16,12 @@ public class SemType {
     private SemType left;
     private SemType right;
     private AtomicType simple;
+    public static final SemType _e = new SemType(AtomicType.E);
+    public static final SemType _t = new SemType(AtomicType.T);
+    public static final SemType _v = new SemType(AtomicType.V);
 
     public enum AtomicType {
-        E,T
+        E,T,V,I
     }
 
     public SemType getLeft() {
@@ -58,10 +61,18 @@ public class SemType {
         if (left != null)
             return "<" + left.toString() + "," + right.toString() + ">";
         else {
-            if (simple == E)
-                return "e";
-            else
-                return "t";
+            switch (simple) {
+                case E:
+                    return "e";
+                case T:
+                    return "t";
+                case V:
+                    return "v";
+                case I:
+                    return "i";
+                default:
+                    return null;
+            }
         }
     }
 

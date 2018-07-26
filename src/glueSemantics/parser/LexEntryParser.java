@@ -17,13 +17,15 @@ import glueSemantics.linearLogic.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParserMain {
+public class LexEntryParser {
     public String Input;
     public List<LLTerm> Premises;
-    public LLAtom Goal;
+    public LinearLogicParser llParser;
+    public SemanticParser semParser;
 
-    public ParserMain(String input)
+    public LexEntryParser(String input)
     {
+
         this.Input = input;
 
 

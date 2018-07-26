@@ -67,6 +67,7 @@ public class SemAtom extends SemRepresentation {
         return this;
     }
 
+    // TODO not necessary?
     public String getName() {
         return name;
     }
